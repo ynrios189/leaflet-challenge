@@ -40,15 +40,15 @@ function createFeatures(earthquakeInfo) {
 
   function createMap(earthquakes) {
 
-    let lightmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    let streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
       attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-      maxZoom: 10,
+      maxZoom: 18,
       id: "mapbox.light",
       accessToken: "pk.eyJ1IjoieW5yaW9zMTg5IiwiYSI6ImNrN3pjcWFrOTAzaWozZnJ5b3YwYW85cjgifQ.sT7hf3Pn5npKJBgjLO3xoA"
     });
     // pisos
     let baseLayer = {
-      "Land Map": lightmap
+      "Land Map": streetmap
     };
 
     let overlayLayer = {
@@ -57,8 +57,8 @@ function createFeatures(earthquakeInfo) {
   
     let myMap = L.map("map", {
       center: [39.50, -98.35],
-      zoom: 4,
-      layers: [lightmap, earthquakes]
+      zoom: 5,
+      layers: [streetmap, earthquakes]
     });
 
     L.control.layers(baseLayer, overlayLayer).addTo(myMap);
