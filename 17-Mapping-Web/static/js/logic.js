@@ -1,7 +1,7 @@
 //similar as  lecture 10-Stu_Geo-Json
-let usgsUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
+let Url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
 
-d3.json(usgsUrl, function(data) {
+d3.json(Url, function(data) {
 
   createFeatures(data.features);
 });
@@ -44,7 +44,7 @@ function createFeatures(earthquakeInfo) {
       attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
       maxZoom: 10,
       id: "mapbox.light",
-      accessToken: "pk.eyJ1IjoibWFyc2hhdiIsImEiOiJjazd6Y3I3cXQwNDh1M2tybGs3eDEwbzRuIn0.qvF35_fYHd8ZTq3dpth3sQ"
+      accessToken: "pk.eyJ1IjoieW5yaW9zMTg5IiwiYSI6ImNrN3pjcWFrOTAzaWozZnJ5b3YwYW85cjgifQ.sT7hf3Pn5npKJBgjLO3xoA"
     });
     // pisos
     let baseLayer = {
